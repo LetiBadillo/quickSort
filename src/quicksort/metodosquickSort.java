@@ -27,13 +27,13 @@ public class metodosquickSort {
         for (int i=0; i < v.size(); i++){
             if(pivote > (int)v.elementAt(i)){
                 
-                v.insertElementAt((int)v.elementAt(i), aux+1);
+                v.insertElementAt((int)v.elementAt(i), aux++);
                 aux++;
             }
             
             if(pivote < (int)v.elementAt(i)){
                 
-                v.insertElementAt((int)v.elementAt(i), aux-1);
+                v.insertElementAt((int)v.elementAt(i), aux--);
                 aux--;
             }
             
