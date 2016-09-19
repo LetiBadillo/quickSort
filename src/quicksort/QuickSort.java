@@ -5,8 +5,10 @@
  */
 package quicksort;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Vector;
+import static quicksort.metodosquickSort.sc;
+
 
 /**
  *
@@ -19,23 +21,24 @@ public class QuickSort {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-     int v, i, e, a;
+        int v, i, e, a;
         i=0;
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); //Scanner
         System.out.println("Introduzca el número de elementos");
-        v = sc.nextInt(); //almacena el número de elementos en variable v
-        Vector x= new Vector(v); //crea un vector de tamaño v
-
-        while(i!=v){ //se ejecuta hasta llenar el vector
-        System.out.println("Introduzca el elemento #"+(i+1)+" y presione enter"); //pide el número de elementos
-        e=sc.nextInt();
-        x.addElement(e);
-        i++;
+        v = sc.nextInt(); //Variable que almacena lo que introduce el scanner
+        int x[]= new int[v]; //crea el arreglo
+        while(i!=v){ //mientras el contador i no llegue al valor de v
+        System.out.println("Introduzca el elemento #"+(i+1)+" y presione enter"); //pide los elementos del arreglo
+        e=sc.nextInt(); //los almacena en la variable e
+        x[i]=e; //los introduce al arreglo
+        i++; //i incrementa
             }
+        
         System.out.println("Elementos capturados");
         metodosquickSort.mostrarVector(x);
-        System.out.println("Elementos capturados");
-        metodosquickSort.ordenar(x);
+        
+        metodosquickSort.MQSort(x);
+        System.out.println("Elementos ordenados");
         metodosquickSort.mostrarVector(x);
         
     
